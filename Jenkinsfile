@@ -31,9 +31,9 @@ pipeline {
       steps {
         script {
           sh """    
-                    git config --global user.name "atimis223"
-                    git config --global user.email "atimis223@gmail.com
-                    git add deploy.yaml
+                    git config --global user.name "atimis223" 
+                    git config --global user.email "atimis223@gmail.com" 
+                    git add deploy.yaml 
                     git commit -m "Tags updated on deployment file"
              """
              withCredentials([gitUsernamePassword(credentialsId: 'github-key', gitToolName: 'Default')])}
