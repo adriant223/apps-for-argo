@@ -36,7 +36,7 @@ pipeline {
                     git add deploy.yaml 
                     git commit -m "Tags updated on deployment file"
              """
-             withCredentialsId([gitUsernamePassword(credentialsId: 'github-key', gitToolName: 'Default')])}
+             withCredentials([gitUsernamePassword(credentialsId: 'github-key', gitToolName: 'Default')])}
       }
         }           
          
