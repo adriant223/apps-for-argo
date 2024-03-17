@@ -37,7 +37,7 @@ pipeline {
                     git add deploy.yaml 
                     git commit -m "Tags updated on deployment file"
                """
-x             }
+             }
       }
         }           
          
