@@ -14,7 +14,7 @@ pipeline {
 
     stage("Git checkout") {
       steps {
-        git branch: 'main', credentialsId: 'github', url: 'https://github.com/adriant223/jenk-full-pipeline'
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/adriant223/apps-for-argo'
       }
     }
         stage("Fetching new tags..") {
