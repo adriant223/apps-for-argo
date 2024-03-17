@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: jenk-pipeline-lab
-        image: atimis224/my-demo-app:v1.0-108
+        image: atimis224/my-demo-app:v1.0-109
         resources:
           limits:
             memory: "256Mi"
