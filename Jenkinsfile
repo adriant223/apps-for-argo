@@ -30,13 +30,14 @@ pipeline {
                 stage("Update deploymet in Git repo") {
       steps {
         script {
-          sh """    
+            withCredentials([gitUsernamePassword(credentialsId: 'github-key', gitToolName: 'Default')]) {
+            sh """    
                     git config --global user.name "atimis223" 
                     git config --global user.email "atimis223@gmail.com" 
                     git add deploy.yaml 
                     git commit -m "Tags updated on deployment file"
-             """
-             withCredentials([gitUsernamePassword(credentialsId: 'github-key', gitToolName: 'Default')])}
+               """
+x             }
       }
         }           
          
