@@ -30,7 +30,7 @@ pipeline {
                 stage("Update deploymet in Git repo") {
       steps {
         script {
-            withCredentials([gitUsernamePassword(credentialsId: 'github-key', gitToolName: 'Default')]) {
+            withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
             sh """    
                     git config --global user.name "atimis223" 
                     git config --global user.email "atimis223@gmail.com" 
