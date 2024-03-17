@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-pipeline-lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenk-pipeline-lab
+  template:
+    metadata:
+      labels:
+        app: jenk-pipeline-lab
+    spec:
+      containers:
+      - name: jenk-pipeline-lab
+        image: atimis224/my-demo-app:v1.0-65
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 8080            
