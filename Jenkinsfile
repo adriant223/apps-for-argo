@@ -31,7 +31,6 @@ pipeline {
                 stage("Update deploymet in Git repo") {
       steps {
         script {
-                {
             sh """    
                     git config --global user.name "atimis223" 
                     git config --global user.email "atimis223@gmail.com" 
@@ -40,7 +39,6 @@ pipeline {
                """
                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) 
                sh "git push https://github.com/adriant223/apps-for-argo main"
-             }
       }
         }           
          
