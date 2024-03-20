@@ -15,7 +15,7 @@ pipeline {
 
     stage("Git checkout") {
       steps {
-        git branch: 'main', credentialsId: 'github', url: 'https://github.com/adriant223/apps-for-argo'
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/YourUsername/YourLiveAppRepo'
       }
     }
         stage("Fetching new tags..") {
@@ -28,16 +28,16 @@ pipeline {
         }
       }
         }
-                stage("Update deploymet in Git repo") {
+                stage("Git-repo deployment update - Trigger ArgoCD SYNC") {
       steps {
         script {
             withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
             sh """    
-                    git config --global user.name "atimis223" 
-                    git config --global user.email "atimis223@gmail.com" 
+                    git config --global user.name "YourGithubUsername" 
+                    git config --global user.email "YourGithubEmail" 
                     git add deploy.yaml 
                     git commit -m "Tags updated on deployment file"
-                    git push https://github.com/adriant223/apps-for-argo main
+                    git push https://github.com/YourUsername/YourLiveAppRepo main
                """
              }
       }
